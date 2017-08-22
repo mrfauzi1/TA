@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Jalan;
+import view.GUI;
 
 /**
  *
@@ -26,5 +27,7 @@ public class Main {
         main.setDurasi(3000, 1000, 2000, 1000);
         
         main.start();
+        
+        GUI gui = new GUI("Traffic Simulation", 1000, 700);
     }
 }

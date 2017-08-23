@@ -71,7 +71,7 @@
     <Component class="javax.swing.JLabel" name="carU1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -83,7 +83,7 @@
     <Component class="javax.swing.JLabel" name="carU2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -95,7 +95,7 @@
     <Component class="javax.swing.JLabel" name="carU3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -107,7 +107,7 @@
     <Component class="javax.swing.JLabel" name="carR1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -119,7 +119,7 @@
     <Component class="javax.swing.JLabel" name="carR2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -131,7 +131,7 @@
     <Component class="javax.swing.JLabel" name="carR3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -143,7 +143,7 @@
     <Component class="javax.swing.JLabel" name="carB1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -155,7 +155,7 @@
     <Component class="javax.swing.JLabel" name="carB2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -167,7 +167,7 @@
     <Component class="javax.swing.JLabel" name="carB3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -215,7 +215,7 @@
     <Component class="javax.swing.JLabel" name="carB4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -227,7 +227,7 @@
     <Component class="javax.swing.JLabel" name="carB5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -239,7 +239,7 @@
     <Component class="javax.swing.JLabel" name="carB6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -251,7 +251,7 @@
     <Component class="javax.swing.JLabel" name="carR4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -263,7 +263,7 @@
     <Component class="javax.swing.JLabel" name="carR5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -275,7 +275,7 @@
     <Component class="javax.swing.JLabel" name="carR6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -287,7 +287,7 @@
     <Component class="javax.swing.JLabel" name="carU4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -311,7 +311,7 @@
     <Component class="javax.swing.JLabel" name="carU6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -359,7 +359,7 @@
     <Component class="javax.swing.JLabel" name="grenB">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/green.png"/>
+          <Image iconType="3" name="/view/rsc/green.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -371,7 +371,7 @@
     <Component class="javax.swing.JLabel" name="yelB">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/yellow.png"/>
+          <Image iconType="3" name="/view/rsc/yellow.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -383,7 +383,7 @@
     <Component class="javax.swing.JLabel" name="redB">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/red.png"/>
+          <Image iconType="3" name="/view/rsc/red.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -395,7 +395,7 @@
     <Component class="javax.swing.JLabel" name="grenU">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/green.png"/>
+          <Image iconType="3" name="/view/rsc/green.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -407,7 +407,7 @@
     <Component class="javax.swing.JLabel" name="yelU">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/yellow.png"/>
+          <Image iconType="3" name="/view/rsc/yellow.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -419,7 +419,7 @@
     <Component class="javax.swing.JLabel" name="redU">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/red.png"/>
+          <Image iconType="3" name="/view/rsc/red.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -431,7 +431,7 @@
     <Component class="javax.swing.JLabel" name="grenR">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/green.png"/>
+          <Image iconType="3" name="/view/rsc/green.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -443,7 +443,7 @@
     <Component class="javax.swing.JLabel" name="yelR">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/yellow.png"/>
+          <Image iconType="3" name="/view/rsc/yellow.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -455,7 +455,7 @@
     <Component class="javax.swing.JLabel" name="redR">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/red.png"/>
+          <Image iconType="3" name="/view/rsc/red.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -527,7 +527,7 @@
     <Component class="javax.swing.JLabel" name="carB7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -539,7 +539,7 @@
     <Component class="javax.swing.JLabel" name="carB8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -551,7 +551,7 @@
     <Component class="javax.swing.JLabel" name="carB9">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -563,7 +563,7 @@
     <Component class="javax.swing.JLabel" name="carB10">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -575,7 +575,7 @@
     <Component class="javax.swing.JLabel" name="carB11">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -587,7 +587,7 @@
     <Component class="javax.swing.JLabel" name="carR7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -599,7 +599,7 @@
     <Component class="javax.swing.JLabel" name="carR8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -611,7 +611,7 @@
     <Component class="javax.swing.JLabel" name="carR9">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -623,7 +623,7 @@
     <Component class="javax.swing.JLabel" name="carR10">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -635,7 +635,7 @@
     <Component class="javax.swing.JLabel" name="carR11">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carRight1.png"/>
+          <Image iconType="3" name="/view/rsc/carLeftRight.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -647,7 +647,7 @@
     <Component class="javax.swing.JLabel" name="carU7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -659,7 +659,7 @@
     <Component class="javax.swing.JLabel" name="carU8">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -671,7 +671,7 @@
     <Component class="javax.swing.JLabel" name="carU9">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -683,7 +683,7 @@
     <Component class="javax.swing.JLabel" name="carU10">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -695,7 +695,7 @@
     <Component class="javax.swing.JLabel" name="carU11">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resources/carUp1.png"/>
+          <Image iconType="3" name="/view/rsc/carUpDown.png"/>
         </Property>
       </Properties>
       <Constraints>

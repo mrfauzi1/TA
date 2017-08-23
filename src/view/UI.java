@@ -236,31 +236,31 @@ public class UI extends javax.swing.JFrame {
         carL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
-        carU1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
 
-        carU2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
 
-        carU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
 
-        carR1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
 
-        carR2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
-        carR3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
-        carB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
 
-        carB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, -1, -1));
 
-        carB3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, -1));
 
         carL4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
@@ -272,31 +272,31 @@ public class UI extends javax.swing.JFrame {
         carL6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carL6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
-        carB4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
 
-        carB5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, -1, -1));
 
-        carB6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, -1, -1));
 
-        carR4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
 
-        carR5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, -1, -1));
 
-        carR6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
-        carU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
         carU5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
 
-        carU6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
         redL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/red.png"))); // NOI18N
@@ -308,31 +308,31 @@ public class UI extends javax.swing.JFrame {
         yelL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/yellow.png"))); // NOI18N
         getContentPane().add(yelL, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 160, 30, 30));
 
-        grenB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/green.png"))); // NOI18N
+        grenB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/green.png"))); // NOI18N
         getContentPane().add(grenB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 30, 30));
 
-        yelB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/yellow.png"))); // NOI18N
+        yelB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/yellow.png"))); // NOI18N
         getContentPane().add(yelB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 30, 40));
 
-        redB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/red.png"))); // NOI18N
+        redB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/red.png"))); // NOI18N
         getContentPane().add(redB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, -1, -1));
 
-        grenU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/green.png"))); // NOI18N
+        grenU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/green.png"))); // NOI18N
         getContentPane().add(grenU, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 30, 30));
 
-        yelU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/yellow.png"))); // NOI18N
+        yelU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/yellow.png"))); // NOI18N
         getContentPane().add(yelU, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 30, 40));
 
-        redU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/red.png"))); // NOI18N
+        redU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/red.png"))); // NOI18N
         getContentPane().add(redU, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, -1));
 
-        grenR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/green.png"))); // NOI18N
+        grenR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/green.png"))); // NOI18N
         getContentPane().add(grenR, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 30, 30));
 
-        yelR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/yellow.png"))); // NOI18N
+        yelR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/yellow.png"))); // NOI18N
         getContentPane().add(yelR, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 410, 30, 30));
 
-        redR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/red.png"))); // NOI18N
+        redR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/red.png"))); // NOI18N
         getContentPane().add(redR, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 410, -1, 30));
 
         carL8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
@@ -350,49 +350,49 @@ public class UI extends javax.swing.JFrame {
         carL12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carL12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
-        carB7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, -1));
 
-        carB8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, -1, -1));
 
-        carB9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
-        carB10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, -1, -1));
 
-        carB11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carB11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 560, -1, -1));
 
-        carR7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, -1, -1));
 
-        carR8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, -1, -1));
 
-        carR9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
 
-        carR10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, -1, -1));
 
-        carR11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carRight1.png"))); // NOI18N
+        carR11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, -1));
 
-        carU7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
-        carU8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
-        carU9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
 
-        carU10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
 
-        carU11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/carUp1.png"))); // NOI18N
+        carU11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carU11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/background.jpg"))); // NOI18N

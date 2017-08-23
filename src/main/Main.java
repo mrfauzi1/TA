@@ -28,6 +28,6 @@ public class Main {
         
         main.start();
         
-        GUI gui = new GUI("Traffic Simulation", 1000, 700);
+//        GUI gui = new GUI("Traffic Simulation", 1000, 700);
     }
 }

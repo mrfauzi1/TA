@@ -26,6 +26,8 @@ public class Jalan extends Thread {
     private double wait;
     private long servis;
     private long start;
+    private boolean val = false;
+    private long arrival;
 
     public Jalan(Posisi posisi, boolean status)
     {
@@ -51,9 +53,78 @@ public class Jalan extends Thread {
         masuk.start();
         keluar.start();
     }
+    
+    public synchronized void add(int jml)
+    {
+//        while (val == false)
+//        {
+            if (listMobil.size() < jml) 
+            {
+                Mobil m = new Mobil("default", "default");
+                long interval = m.getIntervalDatang();
+
+                try 
+                {
+                    sleep(interval);
+                    arrival = arrival + System.currentTimeMillis();
+                    m.setWaktuDatang(arrival);
+                    listMobil.add(m);
+                    System.out.println("["+posisi+"]mobil masuk");
+//                    wait(1000);
+                } 
+                catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+//                val = true;
+                notifyAll();
+            }
+            else
+            {
+                try {
+                    wait(1000);
+//                    System.out.println("["+posisi+"]no cars");
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+//        }
+    }
+    
+    public synchronized void remove()
+    {
+//        while (val == true)
+//        {
+            if (!listMobil.isEmpty() && lampu.getWarna() == Warna.HIJAU)
+            {
+                long interval = listMobil.get(0).getIntervalKeluar();
+                
+                try 
+                {
+                    sleep(interval);
+                    listMobil.remove(0);
+                    System.out.println("["+posisi+"]mobil keluar");
+//                    wait(1000);
+                }
+                catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+//                val = false;
+                notifyAll();
+            }
+            else
+            {
+                try {
+                    wait(1000);
+//                    System.out.println("["+posisi+"]no cars");
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+//        }
+    }
 
     public double getWait() {
-        if (listMobil.size() != 0) 
+        if (!listMobil.isEmpty()) 
         {
             wait = System.currentTimeMillis() - listMobil.get(0).getWaktuDatang();
         }

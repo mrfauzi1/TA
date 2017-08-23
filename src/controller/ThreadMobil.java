@@ -32,70 +32,24 @@ public class ThreadMobil extends Thread
         this.jml = jml;
     }
     
-    public synchronized void add()
-    {
-        while (true)
-        {
-            if (jalan.getListMobil().size() < jml) 
-            {
-                Mobil m = new Mobil("default", "default");
-                long interval = m.getIntervalDatang();
-
-                try 
-                {
-                    sleep(interval);
-                } 
-                catch (InterruptedException ex) {
-                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                arrival = arrival + System.currentTimeMillis();
-                m.setWaktuDatang(arrival);
-                jalan.getListMobil().add(m);
-                System.out.println("["+jalan.getPosisi()+"} mobil masuk");
-                notifyAll();
-            }
-        }
-    }
-    
-    public synchronized void remove()
-    {
-        while (true)
-        {
-            //if tidak kosong dan ketika lampu hijau
-            if (!jalan.getListMobil().isEmpty()) 
-            {
-                long interval = jalan.getListMobil().get(0).getIntervalKeluar();
-                
-                try 
-                {
-                    sleep(interval);
-                }
-                catch (InterruptedException ex) {
-                    Logger.getLogger(ThreadMobil.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                jalan.getListMobil().remove(0);
-                System.out.println("["+jalan.getPosisi()+"} mobil keluar");
-                notifyAll();
-            }
-        }
-    }
-    
     public void aktivitas()
     {
         if (kondisi == "masuk") 
         {
-            add();
+            jalan.add(jml);
         }
         else if (kondisi == "keluar")
         {
-            remove();
+            jalan.remove();
         }
     }
     
     @Override
     public void run()
     {
-        aktivitas();
+        while (true)
+        {
+            aktivitas();
+        }
     }
 }

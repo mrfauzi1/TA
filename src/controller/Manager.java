@@ -18,6 +18,7 @@ import util.Posisi;
 public class Manager extends Thread {
     private Jalan[] jalan;
     private int[] urutan = {1,0,2,3};
+    private int size;
 
     public Manager()
     {
@@ -31,80 +32,38 @@ public class Manager extends Thread {
     
     public void run()
     {
-        //thread jalan start
-        jalan[0].start();
-        jalan[1].start();
-        jalan[2].start();
-        jalan[3].start();
+        ThreadLampu tLampu = new ThreadLampu(jalan, "statis");
         
-        //default first servis
-        int current = urutan[3];
+        //jalan 1
+        ThreadAddMobil add1 = new ThreadAddMobil(jalan[0], size);
+        ThreadRemoveMobil remove1 = new ThreadRemoveMobil(jalan[0]);
         
-        //init for candidate
-        int candidate = 0;
+        //jalan 2
+        ThreadAddMobil add2 = new ThreadAddMobil(jalan[1], size);
+        ThreadRemoveMobil remove2 = new ThreadRemoveMobil(jalan[1]);
         
-        //init for max value
-        double max = 0;
         
-        //set lampu dinamis / statis
-        String lampu = "statis";
+        //jalan 3
+        ThreadAddMobil add3 = new ThreadAddMobil(jalan[2], size);
+        ThreadRemoveMobil remove3 = new ThreadRemoveMobil(jalan[2]);
         
-        //looping changing lamps
-        while (true)
-        {
-            for (int j = 0; j < urutan.length; j++) 
-            {
-                for (int i = 0; i < jalan.length; i++)
-                {
-                    //lampu hijau
-                    if (i == current)
-                    {
-                        //lampu hijau
-                        jalan[i].setStatus(true);
-                    }
-                    //lampu merah
-                    else
-                    {
-                        jalan[i].setStatus(false);
-
-                        //lampu dinamis
-                        if (lampu == "dinamis") 
-                        {
-                            //HRRN Calculation
-                            jalan[i].setRatio(HRRN(jalan[i].getWait(), jalan[i].getLampu().getDurasi()));
-
-                            //look up highest ratio
-                            if (jalan[i].getRatio() > max)
-                            {
-                                max = jalan[i].getRatio();
-                                candidate = i;
-                            }  
-                        }
-                        //lampu statis
-                        else
-                        {
-                            candidate = urutan[j];
-                        }           
-                    }
-                    print(i);
-                }
-            
-                //added print
-                System.out.println("Durasi: "+jalan[current].getLampu().getDurasi()+" miliseconds");
-                System.out.println("");
-
-                //tunggu durasi lampu hijau
-                try 
-                {
-                    sleep(jalan[current].getLampu().getDurasi());
-                } 
-                catch (InterruptedException ex) {
-                    Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                current = candidate;
-            }
-        }
+        //jalan 4
+        ThreadAddMobil add4 = new ThreadAddMobil(jalan[3], size);
+        ThreadRemoveMobil remove4 = new ThreadRemoveMobil(jalan[3]);
+        
+        //threads start
+        tLampu.start();
+        add1.start();
+        add2.start();
+        add3.start();
+        add4.start();
+        remove1.start();
+        remove2.start();
+        remove3.start();
+        remove4.start();
+        
+        //print
+        
     }
     
     public double HRRN(double wait, long servis)
@@ -142,5 +101,9 @@ public class Manager extends Thread {
 
     public void setJalan(Jalan[] jalan) {
         this.jalan = jalan;
+    }
+    
+    public void setSize(int size) {
+        this.size = size;
     }
 }

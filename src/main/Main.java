@@ -26,6 +26,9 @@ public class Main {
         //set durasi jalan1, jalan2, jalan3, jalan4
         main.setDurasi(3000, 1000, 2000, 1000);
         
+        //set buffer size
+        main.setSize(10);
+        
         main.start();
         
 //        GUI gui = new GUI("Traffic Simulation", 1000, 700);

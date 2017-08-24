@@ -6,6 +6,7 @@
 package model;
 
 import java.util.Random;
+import util.Posisi;
 
 /**
  *
@@ -14,14 +15,35 @@ import java.util.Random;
 public class Mobil {
     private long intervalDatang, intervalKeluar;
     private long waktuDatang;
+    private Posisi posisi;
 
-    public Mobil(String rand_masuk, String rand_keluar) 
+    public Mobil(Posisi posisi) 
     {
-        //random interval masuk
-        this.intervalDatang = random(rand_masuk);
-        
-        //random interval keluar
-        this.intervalKeluar = random(rand_keluar);
+        if (posisi == Posisi.atas) 
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        } 
+        else if (posisi == Posisi.bawah) 
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
+        else if (posisi == Posisi.kanan) 
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        } 
+        else if (posisi == Posisi.kiri) 
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
+        else
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
     }
     
     public long random(String pil)

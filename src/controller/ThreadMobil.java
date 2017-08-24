@@ -36,11 +36,11 @@ public class ThreadMobil extends Thread
     {
         if (kondisi == "masuk") 
         {
-            jalan.add(jml);
-        }
-        else if (kondisi == "keluar")
-        {
-            jalan.remove();
+//            jalan.add(jml);
+//        }
+//        else if (kondisi == "keluar")
+//        {
+//            jalan.remove();
         }
     }
     

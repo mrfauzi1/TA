@@ -17,17 +17,14 @@ import util.Warna;
  *
  * @author bukanjoker
  */
-public class Jalan extends Thread {
+public class Jalan {
     private Lampu lampu;
     private ArrayList<Mobil> listMobil;
     private double ratio;
     private boolean status;
     private Posisi posisi;
     private double wait;
-    private long servis;
     private long start;
-    private boolean val = false;
-    private long arrival;
 
     public Jalan(Posisi posisi, boolean status)
     {
@@ -40,88 +37,76 @@ public class Jalan extends Thread {
         listMobil = new ArrayList<>();
     }
     
-    @Override
-    public void run()
-    {        
-        //input listmobil & jumlah        
-        ThreadMobil masuk = new ThreadMobil(this, "masuk");
-        masuk.setJumlahMobil(10);
-        
-        ThreadMobil keluar = new ThreadMobil(this, "keluar");
-        
-        //thread start
-        masuk.start();
-        keluar.start();
-    }
-    
-    public synchronized void add(int jml)
-    {
-//        while (val == false)
-//        {
-            if (listMobil.size() < jml) 
-            {
-                Mobil m = new Mobil("default", "default");
-                long interval = m.getIntervalDatang();
-
-                try 
-                {
-                    sleep(interval);
-                    arrival = arrival + System.currentTimeMillis();
-                    m.setWaktuDatang(arrival);
-                    listMobil.add(m);
-                    System.out.println("["+posisi+"]mobil masuk");
+//    @Override
+//    public void run()
+//    {        
+//        //input listmobil & jumlah        
+//        ThreadMobil masuk = new ThreadMobil(this, "masuk");
+//        masuk.setJumlahMobil(10);
+//        
+//        ThreadMobil keluar = new ThreadMobil(this, "keluar");
+//        
+//        //thread start
+//        masuk.start();
+//        keluar.start();
+//    }
+//    
+//    public synchronized void add(int jml)
+//    {
+//            if (listMobil.size() < jml) 
+//            {
+//                Mobil m = new Mobil("default", "default");
+//                long interval = m.getIntervalDatang();
+//
+//                try 
+//                {
+//                    sleep(interval);
+//                    arrival = arrival + System.currentTimeMillis();
+//                    m.setWaktuDatang(arrival);
+//                    listMobil.add(m);
+//                    System.out.println("["+posisi+"]mobil masuk");
+//                } 
+//                catch (InterruptedException ex) {
+//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                notifyAll();
+//            }
+//            else
+//            {
+//                try {
 //                    wait(1000);
-                } 
-                catch (InterruptedException ex) {
-                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                }
-//                val = true;
-                notifyAll();
-            }
-            else
-            {
-                try {
-                    wait(1000);
-//                    System.out.println("["+posisi+"]no cars");
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-//        }
-    }
-    
-    public synchronized void remove()
-    {
-//        while (val == true)
-//        {
-            if (!listMobil.isEmpty() && lampu.getWarna() == Warna.HIJAU)
-            {
-                long interval = listMobil.get(0).getIntervalKeluar();
-                
-                try 
-                {
-                    sleep(interval);
-                    listMobil.remove(0);
-                    System.out.println("["+posisi+"]mobil keluar");
+//                } catch (InterruptedException ex) {
+//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//            }
+//    }
+//    
+//    public synchronized void remove()
+//    {
+//            if (!listMobil.isEmpty() && lampu.getWarna() == Warna.HIJAU)
+//            {
+//                long interval = listMobil.get(0).getIntervalKeluar();
+//                
+//                try 
+//                {
+//                    sleep(interval);
+//                    listMobil.remove(0);
+//                    System.out.println("["+posisi+"]mobil keluar");
+//                }
+//                catch (InterruptedException ex) {
+//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                notifyAll();
+//            }
+//            else
+//            {
+//                try {
 //                    wait(1000);
-                }
-                catch (InterruptedException ex) {
-                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                }
-//                val = false;
-                notifyAll();
-            }
-            else
-            {
-                try {
-                    wait(1000);
-//                    System.out.println("["+posisi+"]no cars");
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-//        }
-    }
+//                } catch (InterruptedException ex) {
+//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//            }
+//    }
 
     public double getWait() {
         if (!listMobil.isEmpty()) 

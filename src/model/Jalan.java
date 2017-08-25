@@ -72,21 +72,24 @@ public class Jalan extends Thread {
     
     public synchronized void remove()
     {
-            if (!listMobil.isEmpty() && lampu.getWarna() == Warna.HIJAU)
+            if (!listMobil.isEmpty())
             {
-                long interval = listMobil.get(0).getIntervalKeluar();
-                System.out.println("remove["+posisi+"] - "+listMobil.size()+" "+lampu.getWarna());
-                
-                try 
+                while (lampu.getWarna() == Warna.HIJAU)
                 {
-                    sleep(interval);
-                    listMobil.remove(0);
-                    System.out.println("["+posisi+"]mobil keluar ");
+                    long interval = listMobil.get(0).getIntervalKeluar();
+                    System.out.println("remove["+posisi+"] - "+listMobil.size()+" "+lampu.getWarna());
+
+                    try 
+                    {
+                        sleep(interval);
+                        listMobil.remove(0);
+                        System.out.println("["+posisi+"]mobil keluar ");
+                    }
+                    catch (InterruptedException ex) {
+                        Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    notifyAll();
                 }
-                catch (InterruptedException ex) {
-                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                notifyAll();
             }
             else
             {
@@ -99,16 +102,13 @@ public class Jalan extends Thread {
             }
     }
 
-    public double getWait() {
-        if (!listMobil.isEmpty()) 
-        {
-            wait = System.currentTimeMillis() - listMobil.get(0).getWaktuDatang();
-        }
+    public double getWait() 
+    {
         return wait;
     }
 
-    public void setWait(long wait) {
-        this.wait = wait;
+    public void setWait(long waktudatang) {
+        this.wait = System.currentTimeMillis() - waktudatang;
     }
 
     public Lampu getLampu() {

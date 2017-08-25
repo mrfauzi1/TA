@@ -24,7 +24,7 @@ public class Main {
         Manager main = new Manager();
         
         //set durasi jalan1, jalan2, jalan3, jalan4
-        main.setDurasi(3000, 3000, 3000, 3000);
+        main.setDurasi(5000, 5000, 5000, 5000);
         
         //set buffer size
         main.setSize(10);

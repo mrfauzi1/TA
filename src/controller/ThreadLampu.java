@@ -43,6 +43,7 @@ public class ThreadLampu extends Thread {
                 {
                     jalan[i].setStatus(false);
                     //hrrn calculation
+                    jalan[i].setWait(jalan[i].getListMobil().get(0).getWaktuDatang());
                     jalan[i].setRatio(HRRN(jalan[i].getWait(), jalan[i].getLampu().getDurasi()));
                     if (jalan[i].getRatio() > ratioMax) 
                     {

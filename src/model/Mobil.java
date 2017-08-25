@@ -22,27 +22,27 @@ public class Mobil {
         if (posisi == Posisi.atas) 
         {
             this.intervalDatang = random("default");
-            this.intervalKeluar = random("default");
+            this.intervalKeluar = random("pertama");
         } 
         else if (posisi == Posisi.bawah) 
         {
             this.intervalDatang = random("default");
-            this.intervalKeluar = random("default");
+            this.intervalKeluar = random("pertama");
         }
         else if (posisi == Posisi.kanan) 
         {
             this.intervalDatang = random("default");
-            this.intervalKeluar = random("default");
+            this.intervalKeluar = random("pertama");
         } 
         else if (posisi == Posisi.kiri) 
         {
             this.intervalDatang = random("default");
-            this.intervalKeluar = random("default");
+            this.intervalKeluar = random("pertama");
         }
         else
         {
             this.intervalDatang = random("default");
-            this.intervalKeluar = random("default");
+            this.intervalKeluar = random("pertama");
         }
     }
     
@@ -55,7 +55,7 @@ public class Mobil {
             case "default": val = new Random().nextInt(3)+1;
                     break;
             //random distribution
-            case "pertama": val = new Random().nextInt(3)+1;
+            case "pertama": val = new Random().nextInt(2)+1;
                     break;
             case "kedua": val = new Random().nextInt(3)+1;
                     break;

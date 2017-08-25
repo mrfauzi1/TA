@@ -24,42 +24,12 @@ public class ThreadAddMobil extends Thread {
         this.size = jml;
     }
     
-    public synchronized void add()
-    {
-        if (jalan.getListMobil().size() < size) 
-        {
-            Mobil m = new Mobil(jalan.getPosisi());
-            long interval = m.getIntervalDatang();
-            
-            try 
-            {
-                sleep(interval);
-                time = time + System.currentTimeMillis();
-                m.setWaktuDatang(time);
-                jalan.getListMobil().add(m);
-                notifyAll();
-                System.out.println("(mobil masuk - "+jalan.getPosisi()+")");
-            } 
-            catch (InterruptedException ex) {
-                Logger.getLogger(ThreadAddMobil.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        else
-        {
-            try {
-                wait();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ThreadAddMobil.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-    
     @Override
     public void run()
     {
         while (true)
         {
-            add();
+            jalan.add(10);
 //            tesThread();
         }
     }

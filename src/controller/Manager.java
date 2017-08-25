@@ -62,8 +62,21 @@ public class Manager extends Thread {
         remove3.start();
         remove4.start();
         
-        //print
+        int i = 0;
         
+        //print
+//        while (true)
+//        {
+//            print(i);
+//            if (i < 3) 
+//            {
+//                i++;
+//            }
+//            else
+//            {
+//                i = 0;
+//            }
+//        }
     }
     
     public double HRRN(double wait, long servis)
@@ -80,6 +93,11 @@ public class Manager extends Thread {
         System.out.print("[Waktu Tunggu:"+jalan[i].getWait()/1000+"]");
         System.out.print("[Jumlah Mobil: "+jalan[i].getListMobil().size()+"]");
         System.out.println("");
+        try {
+            sleep(jalan[i].getLampu().getDurasi());
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void setDurasi(long jalan1, long jalan2, long jalan3, long jalan4)

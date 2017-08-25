@@ -70,10 +70,9 @@ public class ThreadLampu extends Thread {
             }
         }
         
-        System.out.println("["+jalan[current].getPosisi()+"] hijau");
+        System.out.println("["+jalan[current].getPosisi()+"] "+jalan[current].getLampu().getWarna());
         long durasi = jalan[current].getLampu().getDurasi();
         current = nextCurr;
-//        jalan.notifyAll();
         try {
             sleep(durasi);
         } catch (InterruptedException ex) {

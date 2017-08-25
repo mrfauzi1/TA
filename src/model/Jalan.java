@@ -5,7 +5,8 @@
  */
 package model;
 
-import controller.ThreadMobil;
+import controller.ThreadAddMobil;
+import controller.ThreadRemoveMobil;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
@@ -17,7 +18,7 @@ import util.Warna;
  *
  * @author bukanjoker
  */
-public class Jalan {
+public class Jalan extends Thread {
     private Lampu lampu;
     private ArrayList<Mobil> listMobil;
     private double ratio;
@@ -25,6 +26,8 @@ public class Jalan {
     private Posisi posisi;
     private double wait;
     private long start;
+    private int size;
+    private long arrival;
 
     public Jalan(Posisi posisi, boolean status)
     {
@@ -37,76 +40,64 @@ public class Jalan {
         listMobil = new ArrayList<>();
     }
     
-//    @Override
-//    public void run()
-//    {        
-//        //input listmobil & jumlah        
-//        ThreadMobil masuk = new ThreadMobil(this, "masuk");
-//        masuk.setJumlahMobil(10);
-//        
-//        ThreadMobil keluar = new ThreadMobil(this, "keluar");
-//        
-//        //thread start
-//        masuk.start();
-//        keluar.start();
-//    }
-//    
-//    public synchronized void add(int jml)
-//    {
-//            if (listMobil.size() < jml) 
-//            {
-//                Mobil m = new Mobil("default", "default");
-//                long interval = m.getIntervalDatang();
-//
-//                try 
-//                {
-//                    sleep(interval);
-//                    arrival = arrival + System.currentTimeMillis();
-//                    m.setWaktuDatang(arrival);
-//                    listMobil.add(m);
-//                    System.out.println("["+posisi+"]mobil masuk");
-//                } 
-//                catch (InterruptedException ex) {
-//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//                notifyAll();
-//            }
-//            else
-//            {
-//                try {
-//                    wait(1000);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-//    }
-//    
-//    public synchronized void remove()
-//    {
-//            if (!listMobil.isEmpty() && lampu.getWarna() == Warna.HIJAU)
-//            {
-//                long interval = listMobil.get(0).getIntervalKeluar();
-//                
-//                try 
-//                {
-//                    sleep(interval);
-//                    listMobil.remove(0);
-//                    System.out.println("["+posisi+"]mobil keluar");
-//                }
-//                catch (InterruptedException ex) {
-//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//                notifyAll();
-//            }
-//            else
-//            {
-//                try {
-//                    wait(1000);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-//    }
+    public synchronized void add(int jml)
+    {
+            if (listMobil.size() < jml) 
+            {
+                Mobil m = new Mobil(posisi);
+                long interval = m.getIntervalDatang();
+
+                try 
+                {
+                    sleep(interval);
+                    arrival = arrival + System.currentTimeMillis();
+                    m.setWaktuDatang(arrival);
+                    listMobil.add(m);
+                    System.out.println("add["+posisi+"] Jumlah:"+listMobil.size());
+                } 
+                catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                notifyAll();
+            }
+            else
+            {
+                try {
+                    wait();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+    }
+    
+    public synchronized void remove()
+    {
+            if (!listMobil.isEmpty() && lampu.getWarna() == Warna.HIJAU)
+            {
+                long interval = listMobil.get(0).getIntervalKeluar();
+                System.out.println("remove["+posisi+"] - "+listMobil.size()+" "+lampu.getWarna());
+                
+                try 
+                {
+                    sleep(interval);
+                    listMobil.remove(0);
+                    System.out.println("["+posisi+"]mobil keluar ");
+                }
+                catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                notifyAll();
+            }
+            else
+            {
+                try {
+                    wait();
+                    System.out.println("remove - out of condition: ["+posisi+"]"+listMobil.size()+" "+lampu.getWarna());
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+    }
 
     public double getWait() {
         if (!listMobil.isEmpty()) 

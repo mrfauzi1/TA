@@ -21,39 +21,12 @@ public class ThreadRemoveMobil extends Thread {
         this.jalan = jalan;
     }
     
-    public synchronized void remove()
-    {
-        if (jalan.getListMobil().isEmpty() && jalan.getLampu().getWarna() == Warna.HIJAU) 
-        {
-            long interval = jalan.getListMobil().get(0).getIntervalKeluar();
-            
-            try 
-            {
-                sleep(interval);
-                jalan.getListMobil().remove(0);
-                notifyAll();
-                System.out.println("(mobil keluar - "+jalan.getPosisi()+")");
-            } 
-            catch (InterruptedException ex) {
-                Logger.getLogger(ThreadRemoveMobil.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        else 
-        {
-            try {
-                wait();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ThreadRemoveMobil.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-    
     @Override
     public void run()
     {
         while (true)
         {
-            remove();
+            jalan.remove();
 //            tesThread();
         }
     }

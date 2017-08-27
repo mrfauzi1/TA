@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Jalan;
 import util.Posisi;
+import view.UI;
 
 /**
  *
@@ -24,15 +25,15 @@ public class Manager extends Thread {
     {
         //inisiasi 4 jalan
         jalan = new Jalan[4];
-        jalan[0] = new Jalan(Posisi.atas, false);
-        jalan[1] = new Jalan(Posisi.bawah, false);
-        jalan[2] = new Jalan(Posisi.kanan, false);
+        jalan[0] = new Jalan(Posisi.bawah, false);
+        jalan[1] = new Jalan(Posisi.kanan, false);
+        jalan[2] = new Jalan(Posisi.atas, false);
         jalan[3] = new Jalan(Posisi.kiri, false);
     }
     
     public void run()
     {
-        ThreadLampu tLampu = new ThreadLampu(jalan, "statis");
+        ThreadLampu tLampu = new ThreadLampu(jalan, "statis", urutan);
         
         //jalan 1
         ThreadAddMobil add1 = new ThreadAddMobil(jalan[0], size);
@@ -65,6 +66,9 @@ public class Manager extends Thread {
         int i = 0;
         
         //print
+        UI gui = new UI();
+        gui.setJalan(jalan);
+        gui.setVisible(true);
 //        while (true)
 //        {
 //            print(i);

@@ -19,11 +19,14 @@ public class ThreadLampu extends Thread {
     private String kondisi;
     private double ratioMax;
     private int current = 0;
-    private int nextCurr = 0;
+    private int nextCurr = 1;
+    private int[] urutan;
 
-    public ThreadLampu(Jalan[] jalan, String kondisi) {
+    public ThreadLampu(Jalan[] jalan, String kondisi, int[] urutan) 
+    {
         this.jalan = jalan;
         this.kondisi = kondisi;
+        this.urutan = urutan;
     }
     
     public double HRRN(double wait, long servis)
@@ -35,6 +38,8 @@ public class ThreadLampu extends Thread {
     public void changeLampu()
     {
         jalan[current].setStatus(true);
+        System.out.println("["+jalan[current].getPosisi()+"] "+jalan[current].getLampu().getWarna());
+        long durasi = jalan[current].getLampu().getDurasi();
         
         if (kondisi == "dinamis") 
         {
@@ -52,6 +57,7 @@ public class ThreadLampu extends Thread {
                     }
                 }
             }
+            current = nextCurr;
         }
         else
         {
@@ -69,11 +75,9 @@ public class ThreadLampu extends Thread {
             {
                 nextCurr = 0;
             }
+            current = urutan[nextCurr];
         }
         
-        System.out.println("["+jalan[current].getPosisi()+"] "+jalan[current].getLampu().getWarna());
-        long durasi = jalan[current].getLampu().getDurasi();
-        current = nextCurr;
         try {
             sleep(durasi);
         } catch (InterruptedException ex) {

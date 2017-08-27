@@ -53,7 +53,7 @@ public class Jalan extends Thread {
                     arrival = arrival + System.currentTimeMillis();
                     m.setWaktuDatang(arrival);
                     listMobil.add(m);
-                    System.out.println("add["+posisi+"] Jumlah:"+listMobil.size());
+                    System.out.println("Mobil masuk["+posisi+"] Jumlah:"+listMobil.size());
                 } 
                 catch (InterruptedException ex) {
                     Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
@@ -72,24 +72,27 @@ public class Jalan extends Thread {
     
     public synchronized void remove()
     {
+        while (lampu.getWarna() == Warna.HIJAU)
+        {
             if (!listMobil.isEmpty())
             {
-                while (lampu.getWarna() == Warna.HIJAU)
-                {
-                    long interval = listMobil.get(0).getIntervalKeluar();
-                    System.out.println("remove["+posisi+"] - "+listMobil.size()+" "+lampu.getWarna());
+                long interval = listMobil.get(0).getIntervalKeluar();
+//                    System.out.println("remove["+posisi+"] - "+listMobil.size()+" "+lampu.getWarna());
 
-                    try 
-                    {
-                        sleep(interval);
-                        listMobil.remove(0);
-                        System.out.println("["+posisi+"]mobil keluar ");
-                    }
-                    catch (InterruptedException ex) {
-                        Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    notifyAll();
+                try 
+                {
+                    sleep(interval);
+                    listMobil.remove(0);
+                    System.out.println("Mobil KELUAR["+posisi+"] Jumlah:"+listMobil.size());
                 }
+                catch (InterruptedException ex) {
+                    Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                notifyAll();
+//                    if (listMobil.isEmpty())
+//                    {
+//                        break;
+//                    }
             }
             else
             {
@@ -100,6 +103,7 @@ public class Jalan extends Thread {
                     Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+        }
     }
 
     public double getWait() 

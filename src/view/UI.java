@@ -10,6 +10,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import model.Jalan;
+import model.Lampu;
+import util.Warna;
 
 /**
  *
@@ -22,66 +25,19 @@ public class UI extends javax.swing.JFrame {
      */
     
     Object txtDataIn;
-    JLabel[][] cars = new JLabel[4][6];
+    JLabel[][] cars = new JLabel[4][11];
     JLabel[][] trafficlight = new JLabel[3][4];
     private Timer timer;
+    private Jalan[] jalan;
+    private int[] buffer = new int[4];
     
     public UI() {
         initComponents();
-        init();
         
         //D = Down, U = Up, L = Left, R = Right
-//        cars();
+        cars();
         trafficlight();
         this.setLocationRelativeTo(null);
-//        teslampu();
-//        System.out.println("tes"+Serial.dataComplete);
-        
-    }
-    
-    public void teslampu(char tes) {
-        if (tes != ' ') {
-            int val = Character.getNumericValue(tes);
-        }
-        String temp = "";
-        temp = temp +tes;
-        System.out.println("dataComplete: " + temp);
-    }
-    
-    public void carIn(final int x) {
-        int speed = 1000;
-        
-        ActionListener action = new ActionListener() {
-            int i = 0;
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (i <= 5) {
-                    cars[x][i].setVisible(true);
-                    i++;
-                }
-            }
-        };
-        
-        timer = new Timer(speed, action);
-        timer.start();
-    }
-    
-    public void carOut(final int x) {
-        int speed = 1000;
-        
-        ActionListener action = new ActionListener() {
-            int i = 5;
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (i >= 0) {
-                    cars[x][i].setVisible(false);
-                    i--;
-                }
-            }
-        };
-        
-        timer = new Timer(speed, action);
-        timer.start();
     }
     
     public void cars() {
@@ -91,6 +47,11 @@ public class UI extends javax.swing.JFrame {
         cars[0][3] = carL4;
         cars[0][4] = carL5;
         cars[0][5] = carL6;
+        cars[0][6] = carL7;
+        cars[0][7] = carL8;
+        cars[0][8] = carL9;
+        cars[0][9] = carL10;
+        cars[0][10] = carL11;
         
         cars[1][0] = carU1;
         cars[1][1] = carU2;
@@ -98,6 +59,11 @@ public class UI extends javax.swing.JFrame {
         cars[1][3] = carU4;
         cars[1][4] = carU5;
         cars[1][5] = carU6;
+        cars[1][6] = carU7;
+        cars[1][7] = carU8;
+        cars[1][8] = carU9;
+        cars[1][9] = carU10;
+        cars[1][10] = carU11;
         
         cars[2][0] = carR1;
         cars[2][1] = carR2;
@@ -105,6 +71,11 @@ public class UI extends javax.swing.JFrame {
         cars[2][3] = carR4;
         cars[2][4] = carR5;
         cars[2][5] = carR6;
+        cars[2][6] = carR7;
+        cars[2][7] = carR8;
+        cars[2][8] = carR9;
+        cars[2][9] = carR10;
+        cars[2][10] = carR11;
         
         cars[3][0] = carB1;
         cars[3][1] = carB2;
@@ -112,9 +83,14 @@ public class UI extends javax.swing.JFrame {
         cars[3][3] = carB4;
         cars[3][4] = carB5;
         cars[3][5] = carB6;
+        cars[3][6] = carB7;
+        cars[3][7] = carB8;
+        cars[3][8] = carB9;
+        cars[3][9] = carB10;
+        cars[3][10] = carB11;
         
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 6; j++) {
+            for (int j = 0; j < 11; j++) {
                 cars[i][j].setVisible(false);
             }
         }
@@ -148,8 +124,54 @@ public class UI extends javax.swing.JFrame {
         }
     }
     
-    public void init() {
-       
+    public void mobil()
+    {
+        for (int i = 0; i < jalan.length; i++) 
+        {
+            for (int j = 0; j < jalan[i].getListMobil().size(); j++) 
+            {   
+                if (buffer[i] > jalan[i].getListMobil().size()) 
+                {
+                    cars[i][buffer[i]-1].setVisible(false);
+                    buffer[i] = jalan[i].getListMobil().size();
+                }
+                else 
+                {
+                    cars[i][j].setVisible(true);
+                    buffer[i] = jalan[i].getListMobil().size();
+                }
+                
+            }
+        }
+    }
+    
+    public void lampu()
+    {
+        int tmp = 0;
+        
+        for (int i = 0; i < jalan.length; i++)
+        {
+            if (jalan[i].getLampu().getWarna() == Warna.HIJAU) 
+            {
+                tmp = i;
+            }
+            else
+            {
+                trafficlight[2][i].setVisible(false);
+                trafficlight[0][i].setVisible(true);
+            }
+        }
+        
+        trafficlight[0][tmp].setVisible(false);
+        trafficlight[2][tmp].setVisible(true);
+    }
+
+    public Jalan[] getJalan() {
+        return jalan;
+    }
+
+    public void setJalan(Jalan[] jalan) {
+        this.jalan = jalan;
     }
 
     /**
@@ -197,11 +219,11 @@ public class UI extends javax.swing.JFrame {
         grenR = new javax.swing.JLabel();
         yelR = new javax.swing.JLabel();
         redR = new javax.swing.JLabel();
+        carL7 = new javax.swing.JLabel();
         carL8 = new javax.swing.JLabel();
         carL9 = new javax.swing.JLabel();
         carL10 = new javax.swing.JLabel();
         carL11 = new javax.swing.JLabel();
-        carL12 = new javax.swing.JLabel();
         carB7 = new javax.swing.JLabel();
         carB8 = new javax.swing.JLabel();
         carB9 = new javax.swing.JLabel();
@@ -217,6 +239,7 @@ public class UI extends javax.swing.JFrame {
         carU9 = new javax.swing.JLabel();
         carU10 = new javax.swing.JLabel();
         carU11 = new javax.swing.JLabel();
+        refresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -228,58 +251,58 @@ public class UI extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         carL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, -1));
+        getContentPane().add(carL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
 
         carL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
+        getContentPane().add(carL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, -1));
 
         carL3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+        getContentPane().add(carL3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
 
         carU1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
+        getContentPane().add(carU1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
 
         carU2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
+        getContentPane().add(carU2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
 
         carU3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+        getContentPane().add(carU3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
         carR1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
+        getContentPane().add(carR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
         carR2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
+        getContentPane().add(carR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, -1));
 
         carR3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
         carB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
+        getContentPane().add(carB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, -1, -1));
 
         carB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, -1, -1));
+        getContentPane().add(carB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
 
         carB3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, -1));
+        getContentPane().add(carB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
 
         carL4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
+        getContentPane().add(carL4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
         carL5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+        getContentPane().add(carL5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
         carL6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
+        getContentPane().add(carL6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
 
         carB4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, -1, -1));
+        getContentPane().add(carB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, -1));
 
         carB5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
         getContentPane().add(carB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, -1, -1));
 
         carB6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, -1, -1));
+        getContentPane().add(carB6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, -1));
 
         carR4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
         getContentPane().add(carR4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
@@ -288,16 +311,16 @@ public class UI extends javax.swing.JFrame {
         getContentPane().add(carR5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, -1, -1));
 
         carR6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+        getContentPane().add(carR6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, -1, -1));
 
         carU4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
+        getContentPane().add(carU4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
 
         carU5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+        getContentPane().add(carU5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
         carU6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
+        getContentPane().add(carU6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
 
         redL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/red.png"))); // NOI18N
         getContentPane().add(redL, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
@@ -335,65 +358,73 @@ public class UI extends javax.swing.JFrame {
         redR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/red.png"))); // NOI18N
         getContentPane().add(redR, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 410, -1, 30));
 
+        carL7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
+        getContentPane().add(carL7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+
         carL8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        getContentPane().add(carL8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         carL9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+        getContentPane().add(carL9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         carL10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        getContentPane().add(carL10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         carL11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
-
-        carL12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carL12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        getContentPane().add(carL11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
 
         carB7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, -1));
+        getContentPane().add(carB7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, -1, -1));
 
         carB8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, -1, -1));
+        getContentPane().add(carB8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
         carB9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
+        getContentPane().add(carB9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, -1, -1));
 
         carB10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, -1, -1));
+        getContentPane().add(carB10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 560, -1, -1));
 
         carB11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carB11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 560, -1, -1));
+        getContentPane().add(carB11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 580, -1, -1));
 
         carR7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, -1, -1));
+        getContentPane().add(carR7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, -1, -1));
 
         carR8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, -1, -1));
+        getContentPane().add(carR8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
 
         carR9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
+        getContentPane().add(carR9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, -1, -1));
 
         carR10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, -1, -1));
+        getContentPane().add(carR10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, -1));
 
         carR11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carLeftRight.png"))); // NOI18N
-        getContentPane().add(carR11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, -1));
+        getContentPane().add(carR11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
         carU7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
+        getContentPane().add(carU7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
 
         carU8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
+        getContentPane().add(carU8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
 
         carU9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
+        getContentPane().add(carU9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
 
         carU10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+        getContentPane().add(carU10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
         carU11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/carUpDown.png"))); // NOI18N
-        getContentPane().add(carU11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+        getContentPane().add(carU11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        refresh.setText("REFRESH");
+        refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshActionPerformed(evt);
+            }
+        });
+        getContentPane().add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 70, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/background.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -401,41 +432,46 @@ public class UI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
+        lampu();
+        mobil();
+    }//GEN-LAST:event_refreshActionPerformed
+
     /**
      * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UI().setVisible(true);
-            }
-        });
-    }
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(UI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new UI().setVisible(true);
+//            }
+//        });
+//    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel carB1;
     private javax.swing.JLabel carB10;
@@ -451,12 +487,12 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel carL1;
     private javax.swing.JLabel carL10;
     private javax.swing.JLabel carL11;
-    private javax.swing.JLabel carL12;
     private javax.swing.JLabel carL2;
     private javax.swing.JLabel carL3;
     private javax.swing.JLabel carL4;
     private javax.swing.JLabel carL5;
     private javax.swing.JLabel carL6;
+    private javax.swing.JLabel carL7;
     private javax.swing.JLabel carL8;
     private javax.swing.JLabel carL9;
     private javax.swing.JLabel carR1;
@@ -490,6 +526,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel redL;
     private javax.swing.JLabel redR;
     private javax.swing.JLabel redU;
+    private javax.swing.JButton refresh;
     private javax.swing.JLabel yelB;
     private javax.swing.JLabel yelL;
     private javax.swing.JLabel yelR;

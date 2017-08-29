@@ -28,6 +28,7 @@ public class Jalan extends Thread {
     private long start;
     private int size;
     private long arrival;
+    private String randomIN, randomOUT;
 
     public Jalan(Posisi posisi, boolean status)
     {
@@ -44,7 +45,7 @@ public class Jalan extends Thread {
     {
             if (listMobil.size() < jml) 
             {
-                Mobil m = new Mobil(posisi);
+                Mobil m = new Mobil(randomIN,randomOUT);
                 long interval = m.getIntervalDatang();
 
                 try 
@@ -161,5 +162,10 @@ public class Jalan extends Thread {
 
     public void setPosisi(Posisi posisi) {
         this.posisi = posisi;
+    }
+
+    public void setRandom(String randomIN, String randomOUT) {
+        this.randomIN = randomIN;
+        this.randomOUT = randomOUT;
     }
 }

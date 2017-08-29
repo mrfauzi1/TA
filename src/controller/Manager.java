@@ -20,6 +20,7 @@ public class Manager extends Thread {
     private Jalan[] jalan;
     private int[] urutan = {1,0,2,3};
     private int size;
+    private String kondisi;
 
     public Manager()
     {
@@ -33,7 +34,7 @@ public class Manager extends Thread {
     
     public void run()
     {
-        ThreadLampu tLampu = new ThreadLampu(jalan, "statis", urutan);
+        ThreadLampu tLampu = new ThreadLampu(jalan, kondisi, urutan);
         
         //jalan 1
         ThreadAddMobil add1 = new ThreadAddMobil(jalan[0], size);
@@ -42,7 +43,6 @@ public class Manager extends Thread {
         //jalan 2
         ThreadAddMobil add2 = new ThreadAddMobil(jalan[1], size);
         ThreadRemoveMobil remove2 = new ThreadRemoveMobil(jalan[1]);
-        
         
         //jalan 3
         ThreadAddMobil add3 = new ThreadAddMobil(jalan[2], size);
@@ -63,24 +63,6 @@ public class Manager extends Thread {
         remove3.start();
         remove4.start();
         
-        int i = 0;
-        
-        //print
-        UI gui = new UI();
-        gui.setJalan(jalan);
-        gui.setVisible(true);
-//        while (true)
-//        {
-//            print(i);
-//            if (i < 3) 
-//            {
-//                i++;
-//            }
-//            else
-//            {
-//                i = 0;
-//            }
-//        }
     }
     
     public double HRRN(double wait, long servis)
@@ -111,6 +93,11 @@ public class Manager extends Thread {
         jalan[2].getLampu().setDurasi(jalan3);
         jalan[3].getLampu().setDurasi(jalan4);
     }
+    
+    public void setRandom(int i, String randomIN, String randomOUT)
+    {
+        jalan[i].setRandom(randomIN, randomOUT);
+    }
             
     public Jalan[] getJalan() {
         return jalan;
@@ -127,5 +114,21 @@ public class Manager extends Thread {
     
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public int[] getUrutan() {
+        return urutan;
+    }
+
+    public void setUrutan(int[] urutan) {
+        this.urutan = urutan;
+    }
+
+    public String getKondisi() {
+        return kondisi;
+    }
+
+    public void setKondisi(String kondisi) {
+        this.kondisi = kondisi;
     }
 }

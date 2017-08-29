@@ -4,11 +4,13 @@
  */
 package view;
 
+import controller.Manager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import model.Jalan;
 import model.Lampu;
@@ -30,9 +32,12 @@ public class UI extends javax.swing.JFrame {
     private Timer timer;
     private Jalan[] jalan;
     private int[] buffer = new int[4];
+    private Manager manager;
     
-    public UI() {
+    public UI(Manager manager) {
         initComponents();
+        this.manager = manager;
+        this.jalan = manager.getJalan();
         
         //D = Down, U = Up, L = Left, R = Right
         cars();
@@ -183,6 +188,7 @@ public class UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         carL1 = new javax.swing.JLabel();
         carL2 = new javax.swing.JLabel();
         carL3 = new javax.swing.JLabel();
@@ -241,12 +247,40 @@ public class UI extends javax.swing.JFrame {
         carU11 = new javax.swing.JLabel();
         refresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        start = new javax.swing.JButton();
+        text4 = new javax.swing.JTextField();
+        text1 = new javax.swing.JTextField();
+        text2 = new javax.swing.JTextField();
+        text3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
+        jComboBox3 = new javax.swing.JComboBox();
+        jComboBox4 = new javax.swing.JComboBox();
+        jComboBox5 = new javax.swing.JComboBox();
+        jComboBox6 = new javax.swing.JComboBox();
+        jComboBox7 = new javax.swing.JComboBox();
+        jComboBox8 = new javax.swing.JComboBox();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        statis = new javax.swing.JRadioButton();
+        dinamis = new javax.swing.JRadioButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulasi Lalu Lintas Perempatan Seokarno Hatta");
         setFocusCycleRoot(false);
         setFocusable(false);
-        setMinimumSize(new java.awt.Dimension(900, 630));
+        setMinimumSize(new java.awt.Dimension(1000, 630));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -424,10 +458,129 @@ public class UI extends javax.swing.JFrame {
                 refreshActionPerformed(evt);
             }
         });
-        getContentPane().add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 70, -1, -1));
+        getContentPane().add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 480, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/rsc/background.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        start.setText("START");
+        start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startActionPerformed(evt);
+            }
+        });
+        getContentPane().add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, 80, 30));
+
+        text4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 50, -1));
+
+        text1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 50, -1));
+
+        text2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 50, -1));
+
+        text3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 50, -1));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel2.setText("SET RANDOM");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 10, -1, -1));
+
+        jLabel3.setText("Jalan 4");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
+
+        jLabel4.setText("Jalan 1");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, -1));
+
+        jLabel5.setText("Jalan 2");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, -1, -1));
+
+        jLabel6.setText("Jalan 3");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel7.setText("detik");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel8.setText("detik");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel9.setText("detik");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel10.setText("detik");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel11.setText("TIPE LAMPU :");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, -1, 20));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, -1, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, -1, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 140, -1, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, -1, -1));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, -1, -1));
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, -1, -1));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<default>", "random 1", "random 2", "random 3" }));
+        getContentPane().add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel12.setText("OUT");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel13.setText("IN");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 30, -1, -1));
+
+        buttonGroup1.add(statis);
+        statis.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        statis.setSelected(true);
+        statis.setText("statis");
+        getContentPane().add(statis, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, -1, -1));
+
+        buttonGroup1.add(dinamis);
+        dinamis.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        dinamis.setText("dinamis");
+        getContentPane().add(dinamis, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        jLabel14.setText("SET DURASI LAMPU");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -436,6 +589,65 @@ public class UI extends javax.swing.JFrame {
         lampu();
         mobil();
     }//GEN-LAST:event_refreshActionPerformed
+
+    private void text4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text4ActionPerformed
+
+    private void text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text1ActionPerformed
+
+    private void text2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text2ActionPerformed
+
+    private void text3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text3ActionPerformed
+
+    private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
+        if (
+                text1.getText().equals("") || 
+                text2.getText().equals("") ||
+                text3.getText().equals("") ||
+                text4.getText().equals("")
+                ) 
+        {
+            JOptionPane.showMessageDialog(null, "Sorry can't run while its empty, check your input panel");
+        }
+        else
+        {
+            //set durasi lampu
+            manager.setDurasi(
+                Integer.parseInt(text1.getText())*1000, 
+                Integer.parseInt(text2.getText())*1000, 
+                Integer.parseInt(text3.getText())*1000, 
+                Integer.parseInt(text4.getText())*1000
+            );
+            
+            //set statis/dinamis
+            if (!dinamis.isSelected()) 
+            {
+                manager.setKondisi("statis");
+            }
+            else
+            {
+                manager.setKondisi("dinamis");
+            }
+            
+            //set random
+            manager.setRandom(0, String.valueOf(jComboBox1.getSelectedItem()), String.valueOf(jComboBox5.getSelectedItem()));
+            manager.setRandom(1, String.valueOf(jComboBox2.getSelectedItem()), String.valueOf(jComboBox6.getSelectedItem()));
+            manager.setRandom(2, String.valueOf(jComboBox3.getSelectedItem()), String.valueOf(jComboBox7.getSelectedItem()));
+            manager.setRandom(3, String.valueOf(jComboBox4.getSelectedItem()), String.valueOf(jComboBox8.getSelectedItem()));
+            
+            //set buffer
+            manager.setSize(10);
+            manager.start();
+        }
+        
+    }//GEN-LAST:event_startActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,6 +685,7 @@ public class UI extends javax.swing.JFrame {
 //        });
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel carB1;
     private javax.swing.JLabel carB10;
     private javax.swing.JLabel carB11;
@@ -517,16 +730,44 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel carU7;
     private javax.swing.JLabel carU8;
     private javax.swing.JLabel carU9;
+    private javax.swing.JRadioButton dinamis;
     private javax.swing.JLabel grenB;
     private javax.swing.JLabel grenL;
     private javax.swing.JLabel grenR;
     private javax.swing.JLabel grenU;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
+    private javax.swing.JComboBox jComboBox6;
+    private javax.swing.JComboBox jComboBox7;
+    private javax.swing.JComboBox jComboBox8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel redB;
     private javax.swing.JLabel redL;
     private javax.swing.JLabel redR;
     private javax.swing.JLabel redU;
     private javax.swing.JButton refresh;
+    private javax.swing.JButton start;
+    private javax.swing.JRadioButton statis;
+    private javax.swing.JTextField text1;
+    private javax.swing.JTextField text2;
+    private javax.swing.JTextField text3;
+    private javax.swing.JTextField text4;
     private javax.swing.JLabel yelB;
     private javax.swing.JLabel yelL;
     private javax.swing.JLabel yelR;

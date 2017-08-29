@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Jalan;
 import view.GUI;
+import view.UI;
 
 /**
  *
@@ -22,15 +23,8 @@ public class Main {
     public static void main(String[] args) 
     {
         Manager main = new Manager();
+        UI gui = new UI(main);
         
-        //set durasi jalan1, jalan2, jalan3, jalan4
-        main.setDurasi(5000, 5000, 5000, 5000);
-        
-        //set buffer size
-        main.setSize(10);
-        
-        main.start();
-        
-//        GUI gui = new GUI("Traffic Simulation", 1000, 700);
+        gui.setVisible(true);
     }
 }

@@ -24,7 +24,6 @@ public class Main {
     {
         Manager main = new Manager();
         UI gui = new UI(main);
-        
         gui.setVisible(true);
     }
 }

@@ -27,72 +27,95 @@ public class UI extends javax.swing.JFrame {
      */
     
     Object txtDataIn;
-    JLabel[][] cars = new JLabel[4][11];
-    JLabel[][] trafficlight = new JLabel[3][4];
+    JLabel[][] cars;
+    JLabel[][] trafficlight;
     private Timer timer;
     private Jalan[] jalan;
     private int[] buffer = new int[4];
     private Manager manager;
     
-    public UI(Manager manager) {
+    public UI(Manager manager) 
+    {
         initComponents();
         this.manager = manager;
-        this.jalan = manager.getJalan();
-        
-        //D = Down, U = Up, L = Left, R = Right
+        init();
+    }
+    
+    public void init()
+    {
+//        manager = new Manager();
+        jalan = manager.getJalan();
         cars();
         trafficlight();
         this.setLocationRelativeTo(null);
+        
+        if (String.valueOf(jComboBox9.getSelectedItem()) == "default")
+        {
+            text1.setEditable(false);
+            text2.setEditable(false);
+            text3.setEditable(false);
+            text4.setEditable(false);
+        }
+        else
+        {
+            text1.setEditable(true);
+            text2.setEditable(true);
+            text3.setEditable(true);
+            text4.setEditable(true);
+        }
     }
     
-    public void cars() {
-        cars[0][0] = carL1;
-        cars[0][1] = carL2;
-        cars[0][2] = carL3;
-        cars[0][3] = carL4;
-        cars[0][4] = carL5;
-        cars[0][5] = carL6;
-        cars[0][6] = carL7;
-        cars[0][7] = carL8;
-        cars[0][8] = carL9;
-        cars[0][9] = carL10;
-        cars[0][10] = carL11;
+    public void cars() 
+    {
+        cars = new JLabel[4][11];
         
-        cars[1][0] = carU1;
-        cars[1][1] = carU2;
-        cars[1][2] = carU3;
-        cars[1][3] = carU4;
-        cars[1][4] = carU5;
-        cars[1][5] = carU6;
-        cars[1][6] = carU7;
-        cars[1][7] = carU8;
-        cars[1][8] = carU9;
-        cars[1][9] = carU10;
-        cars[1][10] = carU11;
+        cars[3][0] = carL1;
+        cars[3][1] = carL2;
+        cars[3][2] = carL3;
+        cars[3][3] = carL4;
+        cars[3][4] = carL5;
+        cars[3][5] = carL6;
+        cars[3][6] = carL7;
+        cars[3][7] = carL8;
+        cars[3][8] = carL9;
+        cars[3][9] = carL10;
+        cars[3][10] = carL11;
         
-        cars[2][0] = carR1;
-        cars[2][1] = carR2;
-        cars[2][2] = carR3;
-        cars[2][3] = carR4;
-        cars[2][4] = carR5;
-        cars[2][5] = carR6;
-        cars[2][6] = carR7;
-        cars[2][7] = carR8;
-        cars[2][8] = carR9;
-        cars[2][9] = carR10;
-        cars[2][10] = carR11;
+        cars[2][0] = carU1;
+        cars[2][1] = carU2;
+        cars[2][2] = carU3;
+        cars[2][3] = carU4;
+        cars[2][4] = carU5;
+        cars[2][5] = carU6;
+        cars[2][6] = carU7;
+        cars[2][7] = carU8;
+        cars[2][8] = carU9;
+        cars[2][9] = carU10;
+        cars[2][10] = carU11;
         
-        cars[3][0] = carB1;
-        cars[3][1] = carB2;
-        cars[3][2] = carB3;
-        cars[3][3] = carB4;
-        cars[3][4] = carB5;
-        cars[3][5] = carB6;
-        cars[3][6] = carB7;
-        cars[3][7] = carB8;
-        cars[3][8] = carB9;
-        cars[3][9] = carB10;
-        cars[3][10] = carB11;
+        cars[1][0] = carR1;
+        cars[1][1] = carR2;
+        cars[1][2] = carR3;
+        cars[1][3] = carR4;
+        cars[1][4] = carR5;
+        cars[1][5] = carR6;
+        cars[1][6] = carR7;
+        cars[1][7] = carR8;
+        cars[1][8] = carR9;
+        cars[1][9] = carR10;
+        cars[1][10] = carR11;
+        
+        cars[0][0] = carB1;
+        cars[0][1] = carB2;
+        cars[0][2] = carB3;
+        cars[0][3] = carB4;
+        cars[0][4] = carB5;
+        cars[0][5] = carB6;
+        cars[0][6] = carB7;
+        cars[0][7] = carB8;
+        cars[0][8] = carB9;
+        cars[0][9] = carB10;
+        cars[0][10] = carB11;
         
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 11; j++) {
@@ -101,7 +124,10 @@ public class UI extends javax.swing.JFrame {
         }
     }
     
-    public void trafficlight() {
+    public void trafficlight() 
+    {
+        trafficlight = new JLabel[3][4];
+        
         trafficlight[0][0] = redB;
         trafficlight[0][1] = redR;
         trafficlight[0][2] = redU;
@@ -275,6 +301,7 @@ public class UI extends javax.swing.JFrame {
         statis = new javax.swing.JRadioButton();
         dinamis = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
+        jComboBox9 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulasi Lalu Lintas Perempatan Seokarno Hatta");
@@ -476,60 +503,60 @@ public class UI extends javax.swing.JFrame {
                 text4ActionPerformed(evt);
             }
         });
-        getContentPane().add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 50, -1));
+        getContentPane().add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 50, -1));
 
         text1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text1ActionPerformed(evt);
             }
         });
-        getContentPane().add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 50, -1));
+        getContentPane().add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 50, -1));
 
         text2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text2ActionPerformed(evt);
             }
         });
-        getContentPane().add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 50, -1));
+        getContentPane().add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 50, -1));
 
         text3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text3ActionPerformed(evt);
             }
         });
-        getContentPane().add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 50, -1));
+        getContentPane().add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 50, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         jLabel2.setText("SET RANDOM");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 10, -1, -1));
 
         jLabel3.setText("Jalan 4");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, -1, -1));
 
         jLabel4.setText("Jalan 1");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
 
         jLabel5.setText("Jalan 2");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
 
         jLabel6.setText("Jalan 3");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel7.setText("detik");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel8.setText("detik");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel9.setText("detik");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel10.setText("detik");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 130, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         jLabel11.setText("TIPE LAMPU :");
@@ -582,6 +609,14 @@ public class UI extends javax.swing.JFrame {
         jLabel14.setText("SET DURASI LAMPU");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
 
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Default", "Edit" }));
+        jComboBox9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -607,47 +642,65 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_text3ActionPerformed
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
-        if (
+        if (String.valueOf(jComboBox9.getSelectedItem()) == "edit") 
+        {
+            if (
                 text1.getText().equals("") || 
                 text2.getText().equals("") ||
                 text3.getText().equals("") ||
                 text4.getText().equals("")
                 ) 
-        {
-            JOptionPane.showMessageDialog(null, "Sorry can't run while its empty, check your input panel");
-        }
-        else
-        {
-            //set durasi lampu
-            manager.setDurasi(
-                Integer.parseInt(text1.getText())*1000, 
-                Integer.parseInt(text2.getText())*1000, 
-                Integer.parseInt(text3.getText())*1000, 
-                Integer.parseInt(text4.getText())*1000
-            );
-            
-            //set statis/dinamis
-            if (!dinamis.isSelected()) 
             {
-                manager.setKondisi("statis");
+                JOptionPane.showMessageDialog(null, "Sorry can't run while its empty, check your input panel");
             }
             else
             {
-                manager.setKondisi("dinamis");
+                //set durasi lampu
+                manager.setDurasi(
+                    Integer.parseInt(text1.getText()), 
+                    Integer.parseInt(text2.getText()), 
+                    Integer.parseInt(text3.getText()), 
+                    Integer.parseInt(text4.getText())
+                );
             }
-            
-            //set random
-            manager.setRandom(0, String.valueOf(jComboBox1.getSelectedItem()), String.valueOf(jComboBox5.getSelectedItem()));
-            manager.setRandom(1, String.valueOf(jComboBox2.getSelectedItem()), String.valueOf(jComboBox6.getSelectedItem()));
-            manager.setRandom(2, String.valueOf(jComboBox3.getSelectedItem()), String.valueOf(jComboBox7.getSelectedItem()));
-            manager.setRandom(3, String.valueOf(jComboBox4.getSelectedItem()), String.valueOf(jComboBox8.getSelectedItem()));
-            
-            //set buffer
-            manager.setSize(10);
-            manager.start();
+        }
+        else
+        {
+            //jalan 1, jalan 2, jalan 3, jalan 4
+            manager.setDurasi(5, 5, 5, 5);
         }
         
+        //set statis/dinamis
+        if (!dinamis.isSelected()) 
+        {
+            manager.setKondisi("statis");
+        }
+        else
+        {
+            manager.setKondisi("dinamis");
+        }
+
+        //set buffer
+        manager.setSize(10);
+        manager.start();
     }//GEN-LAST:event_startActionPerformed
+
+    private void jComboBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox9ActionPerformed
+        if (String.valueOf(jComboBox9.getSelectedItem()) == "default")
+        {
+            text1.setEditable(false);
+            text2.setEditable(false);
+            text3.setEditable(false);
+            text4.setEditable(false);
+        }
+        else
+        {
+            text1.setEditable(true);
+            text2.setEditable(true);
+            text3.setEditable(true);
+            text4.setEditable(true);
+        }
+    }//GEN-LAST:event_jComboBox9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -743,6 +796,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox6;
     private javax.swing.JComboBox jComboBox7;
     private javax.swing.JComboBox jComboBox8;
+    private javax.swing.JComboBox jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

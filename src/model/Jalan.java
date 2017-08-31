@@ -45,7 +45,7 @@ public class Jalan extends Thread {
     {
             if (listMobil.size() < jml) 
             {
-                Mobil m = new Mobil(randomIN,randomOUT);
+                Mobil m = new Mobil(posisi);
                 long interval = m.getIntervalDatang();
 
                 try 
@@ -59,7 +59,7 @@ public class Jalan extends Thread {
                 catch (InterruptedException ex) {
                     Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                notifyAll();
+//                notifyAll();
             }
             else
             {
@@ -78,8 +78,6 @@ public class Jalan extends Thread {
             if (!listMobil.isEmpty())
             {
                 long interval = listMobil.get(0).getIntervalKeluar();
-//                    System.out.println("remove["+posisi+"] - "+listMobil.size()+" "+lampu.getWarna());
-
                 try 
                 {
                     sleep(interval);
@@ -89,7 +87,7 @@ public class Jalan extends Thread {
                 catch (InterruptedException ex) {
                     Logger.getLogger(Jalan.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                notifyAll();
+//                notifyAll();
 //                    if (listMobil.isEmpty())
 //                    {
 //                        break;

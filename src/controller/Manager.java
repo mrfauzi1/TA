@@ -18,7 +18,7 @@ import view.UI;
  */
 public class Manager extends Thread {
     private Jalan[] jalan;
-    private int[] urutan = {1,0,2,3};
+    private int[] urutan = {1,0,3,2};
     private int size;
     private String kondisi;
 
@@ -88,10 +88,10 @@ public class Manager extends Thread {
     
     public void setDurasi(long jalan1, long jalan2, long jalan3, long jalan4)
     {
-        jalan[0].getLampu().setDurasi(jalan1);
-        jalan[1].getLampu().setDurasi(jalan2);
-        jalan[2].getLampu().setDurasi(jalan3);
-        jalan[3].getLampu().setDurasi(jalan4);
+        jalan[0].getLampu().setDurasi(jalan1*1000);
+        jalan[1].getLampu().setDurasi(jalan2*1000);
+        jalan[2].getLampu().setDurasi(jalan3*1000);
+        jalan[3].getLampu().setDurasi(jalan4*1000);
     }
     
     public void setRandom(int i, String randomIN, String randomOUT)

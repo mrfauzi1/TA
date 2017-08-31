@@ -17,10 +17,30 @@ public class Mobil {
     private long waktuDatang;
     private Posisi posisi;
 
-    public Mobil(String randomIN, String randomOUT) 
+    public Mobil(Posisi posisi) 
     {
-        this.intervalDatang = random(randomIN);
-        this.intervalKeluar = random(randomOUT);
+        this.posisi = posisi;
+        
+        if (posisi == Posisi.atas)
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
+        else if (posisi == Posisi.kanan)
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
+        else if (posisi == Posisi.kiri)
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
+        else if (posisi == Posisi.bawah)
+        {
+            this.intervalDatang = random("default");
+            this.intervalKeluar = random("default");
+        }
     }
     
     public long random(String pil)
